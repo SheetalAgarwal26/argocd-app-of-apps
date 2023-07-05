@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-3
+  namespace: helm
+spec:
+  selector:
+    app: myapp-3
+  ports:
+  - name: web
+    protocol: TCP
+    port: 80
+    targetPort: 5678
+    # nodePort: {{  .Values.myservice.port }}
+  type: {{  .Values.myservice.type  }}
