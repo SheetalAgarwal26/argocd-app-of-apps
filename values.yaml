@@ -1,0 +1,6 @@
+#variable file 
+
+replicaCount: 1
+myservice:
+  type: LoadBalancer
+  # port: 30000
