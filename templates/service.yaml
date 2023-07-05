@@ -5,7 +5,7 @@ metadata:
   namespace: helm
 spec:
   selector:
-    app: apache2
+    app: apache
   ports:
   - name: apache
     protocol: TCP
