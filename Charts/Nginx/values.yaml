@@ -1,0 +1,7 @@
+#variable file 
+
+replicaCount: 2
+image: nginx
+myservice:
+  type: LoadBalancer
+  # port: 30000
