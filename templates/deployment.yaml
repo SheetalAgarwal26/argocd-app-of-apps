@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Apache
+  name: apache
   namespace: helm
   labels:
-    app: Apache
+    app: apache
 spec:
   replicas: {{   .Values.replicaCount   }}
   selector:
     matchLabels:
-      app: Apache
+      app: apache
   template:
     metadata:
       labels:
-        app: Apache
+        app: apache
     spec:
       containers:
-      - name: Apache
+      - name: apache
         image: httpd:alpine
         imagePullPolicy: Always
         ports:
