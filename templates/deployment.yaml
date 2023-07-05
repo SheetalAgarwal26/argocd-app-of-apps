@@ -1,25 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-2
+  name: Apache
   namespace: helm
   labels:
-    app: myapp-2
+    app: Apache
 spec:
   replicas: {{   .Values.replicaCount   }}
   selector:
     matchLabels:
-      app: myapp-2
+      app: Apache
   template:
     metadata:
       labels:
-        app: myapp-2
+        app: Apache
     spec:
       containers:
-      - name: myapp-2
-        image: hashicorp/http-echo
+      - name: Apache
+        image: httpd:alpine
         imagePullPolicy: Always
-        args:
-        - "-text=Helm-Deployment"
         ports:
-        - containerPort: 5678
+        - containerPort: 80
