@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc-2
+  name: apache2-svc
   namespace: helm
 spec:
   selector:
-    app: myapp-2
+    app: apache2
   ports:
-  - name: web
+  - name: apache
     protocol: TCP
     port: 80
-    targetPort: 5678
+    targetPort: 80
     # nodePort: {{  .Values.myservice.port }}
   type: {{  .Values.myservice.type  }}
